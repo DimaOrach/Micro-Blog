@@ -4,7 +4,8 @@ NEW POST http://localhost:3000/posts
 {
     "title": "My First Post",
     "content": "This is the content of my first post.",
-    "author": "63f9c3a6b7eae300dc4f24d5" user's ID
+    "author": "63f9c3a6b7eae300dc4f24d5" user's ID,
+    "category": "Technologies"
 }
 
 GET ALL POSTS http://localhost:3000/posts
@@ -44,7 +45,7 @@ GET POST`S COMMENT http://localhost:3000/comments/POST_ID
 
 DELETE COMMENT http://localhost:3000/comments/COMMENT_ID
 
-
+GET POSTS FROM ONE CATEGORY http://localhost:3000/posts/category/CATEGORY_NAME
 
 
 

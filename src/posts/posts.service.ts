@@ -7,8 +7,8 @@ import { Post } from './post.schema';
 export class PostsService {
     constructor(@InjectModel('Post') private readonly postModel: Model<Post>) {}
 
-    async createPost(title: string, content: string, author: string): Promise<Post> {
-        const newPost = new this.postModel({ title, content, author });
+    async createPost(title: string, content: string, author: string, category: string): Promise<Post> {
+        const newPost = new this.postModel({ title, content, author, category });
         return newPost.save();
     }
 
@@ -66,4 +66,8 @@ export class PostsService {
         }
         return post;
     }
+
+    async getPostsByCategory(category: string): Promise<Post[]> {
+        return this.postModel.find({ category }).exec();
+      }
 }

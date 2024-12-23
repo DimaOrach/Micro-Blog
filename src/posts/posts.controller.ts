@@ -7,9 +7,11 @@ export class PostsController {
     constructor(private readonly postsService: PostsService) {}
 
     @Post()
-    async create(@Body() createPostDto: { title: string; content: string; author: string }): Promise<PostEntity> {
-        const { title, content, author } = createPostDto;
-        return this.postsService.createPost(title, content, author);
+    async create(@Body() createPostDto: { 
+        title: string; content: string; author: string, category: string
+    }): Promise<PostEntity> {
+        const { title, content, author, category } = createPostDto;
+        return this.postsService.createPost(title, content, author, category);
     }
 
     @Get()
@@ -45,4 +47,9 @@ export class PostsController {
     async unlike(@Param('id') id: string, @Body('userId') userId: string): Promise<PostEntity> {
         return this.postsService.unlikePost(id, userId);
     }
+
+    @Get('/category/:category')
+    async getPostsByCategory(@Param('category') category: string) {
+    return this.postsService.getPostsByCategory(category);
+  }
 }

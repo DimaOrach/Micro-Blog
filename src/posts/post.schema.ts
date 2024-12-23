@@ -5,7 +5,8 @@ export const PostSchema = new Schema({
     content: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true }, 
-    likes: { type: [Schema.Types.ObjectId], ref: 'User', default: [] }
+    likes: { type: [Schema.Types.ObjectId], ref: 'User', default: [] },
+    category: { type: String, default: 'No category' },
 });
 
 export interface Post extends Document {
@@ -15,4 +16,5 @@ export interface Post extends Document {
     createdAt: Date;
     author: string;
     likes: string[];
+    category: string;
 }
