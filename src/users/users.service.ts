@@ -6,6 +6,7 @@ import { User } from './user.schema';
 
 @Injectable()
 export class UsersService {
+  
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
   async createUser(username: string, password: string): Promise<User> {
@@ -19,5 +20,9 @@ export class UsersService {
 
   async findUserByUsername(username: string): Promise<User | null> {
     return this.userModel.findOne({ username }).exec();
+  }
+
+  findUserById(sub: any) {
+    throw new Error('Method not implemented.');
 }
 }

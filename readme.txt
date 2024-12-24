@@ -11,6 +11,7 @@ LOGIN USER http://localhost:3000/auth/login
   "username": "testuser",
   "password": "testpassword"
 }
+Getting token, GET http://localhost:3000/posts , go to Headers, Key: Authorization, Value: Bearer YOUR_TOKEN
 
 NEW POST http://localhost:3000/posts
 {
