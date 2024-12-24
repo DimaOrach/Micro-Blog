@@ -1,5 +1,17 @@
 All routes:
 
+REGISTER USER http://localhost:3000/auth/register
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+LOGIN USER http://localhost:3000/auth/login
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
 NEW POST http://localhost:3000/posts
 {
     "title": "My First Post",
